@@ -10,7 +10,7 @@ const fetchCoordsByIP = function(body) {
 
 const fetchISSFlyOverTimes = function(body) {
   const location = JSON.parse(body)
-  return request(`http://api.open-notify.org/iss-pass.json?lat=${location.lat}&lon=${location.lon}&n=6`)
+  return request(`http://api.open-notify.org/iss-pass.json?lat=${location.lat}&lon=${location.lon}&n=5`)
 };
 
 const dateConverter = (arr) => {
@@ -26,7 +26,7 @@ const dateConverter = (arr) => {
     const min = UTXdate.getMinutes();
     const sec = UTXdate.getSeconds();
     const time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
-    console.log(`Next flyover is ${time} for ${dur} seconds`);
+    console.log(`Next flyover is ${time} for ${dur} seconds. HAPPY STARGAZING!`);
   }
 }
 
